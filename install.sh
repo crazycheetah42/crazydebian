@@ -27,6 +27,22 @@ rm -rf Nordzy-cursors
 echo "Setting up fonts"
 fc-cache -vf
 
+echo "Copying .Xnord and .Xresources"
+cd $builddir
+mv .Xnord /home/$username/
+mv .Xresources /home/$username/
+
+echo "Creating and copying default user directories"
+mkdir -p /home/$username/Documents
+mkdir -p /home/$username/Desktop
+mkdir -p /home/$username/Downloads
+mkdir -p /home/$username/Pictures
+mkdir -p /home/$username/Music
+mkdir -p /home/$username/Public
+mkdir -p /home/$username/Templates
+mkdir -p /home/$username/Videos
+mv user-dirs.dirs /home/$username/.config/
+
 echo "Setting up login screen (lightdm)"
 sudo systemctl enable lightdm
 sudo systemctl set-default graphical.target
