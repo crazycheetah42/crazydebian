@@ -1,4 +1,6 @@
+#!/bin/bash
 username="${SUDO_USER:-$USER}"
+builddir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 echo "Installing crazydebian bspwm"
 sudo apt update && sudo apt full-upgrade -y
