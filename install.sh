@@ -31,4 +31,8 @@ echo "Setting up login screen (lightdm)"
 sudo systemctl enable lightdm
 sudo systemctl set-default graphical.target
 
+echo "Making bspwm and sxhkd executable"
+chmod +x /home/$username/.config/bspwm/bspwmrc
+chmod +x /home/$username/.config/sxhkd/sxhkdrc
+
 echo "Installed! Please run 'sudo reboot' to reboot your computer and make sure to login to bspwm instead of the Default Xsession"
