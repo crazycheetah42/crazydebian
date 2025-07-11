@@ -6,6 +6,7 @@ echo "Installing crazydebian bspwm"
 sudo apt update && sudo apt full-upgrade -y
 
 echo "Copying config files"
+mkdir /home/$username/.config
 mkdir /home/$username/.fonts
 cp -r dotconfig/* /home/$username/.config/
 cp -r dotfonts/* /home/$username/.fonts/
